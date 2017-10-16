@@ -1,0 +1,23 @@
+{
+    "ecommerceApp": {
+        "flujoPedido" : {
+            "home": {
+                "title": "Flujo Pedidos",
+                "createLabel": "Crear nuevo Flujo Pedido",
+                "createOrEditLabel": "Crear o editar Flujo Pedido"
+            },
+            "created": "Un nuevo Flujo Pedido ha sido creado con el identificador {{ param }}",
+            "updated": "Un Flujo Pedido ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Flujo Pedido ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Flujo Pedido {{ id }}?"
+            },
+            "detail": {
+                "title": "Flujo Pedido"
+            },
+            "activo": "Activo",
+            "cargo": "Cargo",
+            "anterior": "Anterior"
+        }
+    }
+}

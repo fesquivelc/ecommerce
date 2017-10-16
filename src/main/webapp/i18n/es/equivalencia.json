@@ -1,0 +1,23 @@
+{
+    "ecommerceApp": {
+        "equivalencia" : {
+            "home": {
+                "title": "Equivalencias",
+                "createLabel": "Crear nuevo Equivalencia",
+                "createOrEditLabel": "Crear o editar Equivalencia"
+            },
+            "created": "Un nuevo Equivalencia ha sido creado con el identificador {{ param }}",
+            "updated": "Un Equivalencia ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Equivalencia ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Equivalencia {{ id }}?"
+            },
+            "detail": {
+                "title": "Equivalencia"
+            },
+            "valor": "Valor",
+            "desde": "Desde",
+            "hasta": "Hasta"
+        }
+    }
+}

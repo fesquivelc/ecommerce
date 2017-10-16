@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="ecommerceApp.flujoPedido.detail.title">Flujo Pedido</span> {{vm.flujoPedido.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ecommerceApp.flujoPedido.activo">Activo</span></dt>
+        <dd>
+            <span>{{vm.flujoPedido.activo}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.flujoPedido.cargo">Cargo</span></dt>
+        <dd>
+            <a ui-sref="cargo-detail({id:vm.flujoPedido.cargo.id})">{{vm.flujoPedido.cargo.id}}</a>
+        </dd>
+        <dt><span data-translate="ecommerceApp.flujoPedido.anterior">Anterior</span></dt>
+        <dd>
+            <a ui-sref="flujo-pedido-detail({id:vm.flujoPedido.anterior.id})">{{vm.flujoPedido.anterior.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="flujo-pedido-detail.edit({id:vm.flujoPedido.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

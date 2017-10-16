@@ -1,0 +1,9 @@
+{
+    "ecommerceApp": {
+        "FormaPago" : {
+            "null": "",
+            "CONTADO": "CONTADO",
+            "CUOTAS": "CUOTAS"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "ecommerceApp": {
+        "TipoComprobante" : {
+            "null": "",
+            "FACTURA": "FACTURA",
+            "BOLETA": "BOLETA"
+        }
+    }
+}

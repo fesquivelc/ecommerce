@@ -1,0 +1,102 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPedidoLabel" data-translate="ecommerceApp.pedido.home.createOrEditLabel">Create or edit a Pedido</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.pedido.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.pedido.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ecommerceApp.pedido.fecha" for="field_fecha">Fecha</label>
+                <div class="input-group">
+                    <input id="field_fecha" type="text" class="form-control" name="fecha" datetime-picker="{{dateformat}}" ng-model="vm.pedido.fecha" is-open="vm.datePickerOpenStatus.fecha"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fecha')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.fecha.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fecha.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.fecha.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ecommerceApp.pedido.estado" for="field_estado">Estado</label>
+            <select class="form-control" name="estado" ng-model="vm.pedido.estado" id="field_estado" required>
+                <option value="GENERADO" data-translate="ecommerceApp.EstadoPedido.GENERADO">GENERADO</option>
+                <option value="ACEPTADO" data-translate="ecommerceApp.EstadoPedido.ACEPTADO">ACEPTADO</option>
+                <option value="ENVIADO" data-translate="ecommerceApp.EstadoPedido.ENVIADO">ENVIADO</option>
+                <option value="RECIBIDO" data-translate="ecommerceApp.EstadoPedido.RECIBIDO">RECIBIDO</option>
+            </select>
+            <div ng-show="editForm.estado.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.estado.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ecommerceApp.pedido.montoVenta" for="field_montoVenta">Monto Venta</label>
+            <input type="number" class="form-control" name="montoVenta" id="field_montoVenta"
+                    ng-model="vm.pedido.montoVenta"
+                    required/>
+            <div ng-show="editForm.montoVenta.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.montoVenta.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.montoVenta.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ecommerceApp.pedido.formaPago" for="field_formaPago">Forma Pago</label>
+            <select class="form-control" name="formaPago" ng-model="vm.pedido.formaPago" id="field_formaPago" required>
+                <option value="CONTADO" data-translate="ecommerceApp.FormaPago.CONTADO">CONTADO</option>
+                <option value="CUOTAS" data-translate="ecommerceApp.FormaPago.CUOTAS">CUOTAS</option>
+            </select>
+            <div ng-show="editForm.formaPago.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.formaPago.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ecommerceApp.pedido.cliente" for="field_cliente">Cliente</label>
+            <select class="form-control" id="field_cliente" name="cliente" ng-model="vm.pedido.cliente" ng-options="cliente as cliente.id for cliente in vm.clientes track by cliente.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="ecommerceApp.pedido.vendedor" for="field_vendedor">Vendedor</label>
+            <select class="form-control" id="field_vendedor" name="vendedor" ng-model="vm.pedido.vendedor" ng-options="personal as personal.id for personal in vm.personals track by personal.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

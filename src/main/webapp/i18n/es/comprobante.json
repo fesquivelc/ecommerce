@@ -1,0 +1,23 @@
+{
+    "ecommerceApp": {
+        "comprobante" : {
+            "home": {
+                "title": "Comprobantes",
+                "createLabel": "Crear nuevo Comprobante",
+                "createOrEditLabel": "Crear o editar Comprobante"
+            },
+            "created": "Un nuevo Comprobante ha sido creado con el identificador {{ param }}",
+            "updated": "Un Comprobante ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Comprobante ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Comprobante {{ id }}?"
+            },
+            "detail": {
+                "title": "Comprobante"
+            },
+            "numero": "Numero",
+            "tipoComprobante": "Tipo Comprobante",
+            "pedido": "Pedido"
+        }
+    }
+}

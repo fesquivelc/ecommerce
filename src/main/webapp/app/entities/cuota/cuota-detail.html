@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="ecommerceApp.cuota.detail.title">Cuota</span> {{vm.cuota.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ecommerceApp.cuota.fechaVencimiento">Fecha Vencimiento</span></dt>
+        <dd>
+            <span>{{vm.cuota.fechaVencimiento | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.cuota.fechaComunicado">Fecha Comunicado</span></dt>
+        <dd>
+            <span>{{vm.cuota.fechaComunicado | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.cuota.monto">Monto</span></dt>
+        <dd>
+            <span>{{vm.cuota.monto}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.cuota.estado">Estado</span></dt>
+        <dd>
+            <span data-translate="{{'ecommerceApp.CuotaEstado.' + vm.cuota.estado}}">{{vm.cuota.estado}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.cuota.pedido">Pedido</span></dt>
+        <dd>
+            <a ui-sref="pedido-detail({id:vm.cuota.pedido.id})">{{vm.cuota.pedido.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="cuota-detail.edit({id:vm.cuota.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,10 @@
+{
+    "ecommerceApp": {
+        "ClienteEstado" : {
+            "null": "",
+            "ACTIVO": "ACTIVO",
+            "INACTIVO": "INACTIVO",
+            "DEUDOR": "DEUDOR"
+        }
+    }
+}

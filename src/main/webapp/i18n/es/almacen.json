@@ -1,0 +1,23 @@
+{
+    "ecommerceApp": {
+        "almacen" : {
+            "home": {
+                "title": "Almacens",
+                "createLabel": "Crear nuevo Almacen",
+                "createOrEditLabel": "Crear o editar Almacen"
+            },
+            "created": "Un nuevo Almacen ha sido creado con el identificador {{ param }}",
+            "updated": "Un Almacen ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Almacen ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Almacen {{ id }}?"
+            },
+            "detail": {
+                "title": "Almacen"
+            },
+            "codigo": "Codigo",
+            "nombre": "Nombre",
+            "responsable": "Responsable"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "ecommerceApp": {
+        "EstadoPedido" : {
+            "null": "",
+            "GENERADO": "GENERADO",
+            "ACEPTADO": "ACEPTADO",
+            "ENVIADO": "ENVIADO",
+            "RECIBIDO": "RECIBIDO"
+        }
+    }
+}

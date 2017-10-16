@@ -1,0 +1,52 @@
+
+<div>
+    <h2><span data-translate="ecommerceApp.producto.detail.title">Producto</span> {{vm.producto.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ecommerceApp.producto.codigoBarras">Codigo Barras</span></dt>
+        <dd>
+            <span>{{vm.producto.codigoBarras}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.producto.imagen">Imagen</span></dt>
+        <dd>
+            <div ng-if="vm.producto.imagen">
+                <a ng-click="vm.openFile(vm.producto.imagenContentType, vm.producto.imagen)">
+                    <img data-ng-src="{{'data:' + vm.producto.imagenContentType + ';base64,' + vm.producto.imagen}}" style="max-width: 100%;" alt="producto image"/>
+                </a>
+                {{vm.producto.imagenContentType}}, {{vm.byteSize(vm.producto.imagen)}}
+            </div>
+        </dd>
+        <dt><span data-translate="ecommerceApp.producto.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.producto.nombre}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.producto.precioBase">Precio Base</span></dt>
+        <dd>
+            <span>{{vm.producto.precioBase}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.producto.unidadMedida">Unidad Medida</span></dt>
+        <dd>
+            <a ui-sref="unidad-medida-detail({id:vm.producto.unidadMedida.id})">{{vm.producto.unidadMedida.id}}</a>
+        </dd>
+        <dt><span data-translate="ecommerceApp.producto.categoria">Categoria</span></dt>
+        <dd>
+            <a ui-sref="categoria-detail({id:vm.producto.categoria.id})">{{vm.producto.categoria.id}}</a>
+        </dd>
+        <dt><span data-translate="ecommerceApp.producto.marca">Marca</span></dt>
+        <dd>
+            <a ui-sref="marca-detail({id:vm.producto.marca.id})">{{vm.producto.marca.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="producto-detail.edit({id:vm.producto.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="ecommerceApp.pedido.detail.title">Pedido</span> {{vm.pedido.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ecommerceApp.pedido.fecha">Fecha</span></dt>
+        <dd>
+            <span>{{vm.pedido.fecha | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.pedido.estado">Estado</span></dt>
+        <dd>
+            <span data-translate="{{'ecommerceApp.EstadoPedido.' + vm.pedido.estado}}">{{vm.pedido.estado}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.pedido.montoVenta">Monto Venta</span></dt>
+        <dd>
+            <span>{{vm.pedido.montoVenta}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.pedido.formaPago">Forma Pago</span></dt>
+        <dd>
+            <span data-translate="{{'ecommerceApp.FormaPago.' + vm.pedido.formaPago}}">{{vm.pedido.formaPago}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.pedido.cliente">Cliente</span></dt>
+        <dd>
+            <a ui-sref="cliente-detail({id:vm.pedido.cliente.id})">{{vm.pedido.cliente.id}}</a>
+        </dd>
+        <dt><span data-translate="ecommerceApp.pedido.vendedor">Vendedor</span></dt>
+        <dd>
+            <a ui-sref="personal-detail({id:vm.pedido.vendedor.id})">{{vm.pedido.vendedor.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pedido-detail.edit({id:vm.pedido.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

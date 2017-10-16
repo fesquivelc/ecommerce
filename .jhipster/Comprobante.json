@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "pedido",
+            "otherEntityName": "pedido",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "numero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tipoComprobante",
+            "fieldType": "TipoComprobante",
+            "fieldValues": "FACTURA,BOLETA"
+        }
+    ],
+    "changelogDate": "20171015141624",
+    "entityTableName": "comprobante",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="ecommerceApp.equivalencia.detail.title">Equivalencia</span> {{vm.equivalencia.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ecommerceApp.equivalencia.valor">Valor</span></dt>
+        <dd>
+            <span>{{vm.equivalencia.valor}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.equivalencia.desde">Desde</span></dt>
+        <dd>
+            <a ui-sref="unidad-medida-detail({id:vm.equivalencia.desde.id})">{{vm.equivalencia.desde.id}}</a>
+        </dd>
+        <dt><span data-translate="ecommerceApp.equivalencia.hasta">Hasta</span></dt>
+        <dd>
+            <a ui-sref="unidad-medida-detail({id:vm.equivalencia.hasta.id})">{{vm.equivalencia.hasta.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="equivalencia-detail.edit({id:vm.equivalencia.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

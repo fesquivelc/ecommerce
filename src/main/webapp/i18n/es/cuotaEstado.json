@@ -1,0 +1,10 @@
+{
+    "ecommerceApp": {
+        "CuotaEstado" : {
+            "null": "",
+            "PAGADA": "PAGADA",
+            "ESPERA": "ESPERA",
+            "DEUDA": "DEUDA"
+        }
+    }
+}

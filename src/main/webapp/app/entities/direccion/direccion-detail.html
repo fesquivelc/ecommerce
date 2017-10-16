@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="ecommerceApp.direccion.detail.title">Direccion</span> {{vm.direccion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ecommerceApp.direccion.direccion">Direccion</span></dt>
+        <dd>
+            <span>{{vm.direccion.direccion}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.direccion.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.direccion.numero}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.direccion.telefono">Telefono</span></dt>
+        <dd>
+            <span>{{vm.direccion.telefono}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.direccion.celular">Celular</span></dt>
+        <dd>
+            <span>{{vm.direccion.celular}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.direccion.cliente">Cliente</span></dt>
+        <dd>
+            <a ui-sref="cliente-detail({id:vm.direccion.cliente.id})">{{vm.direccion.cliente.id}}</a>
+        </dd>
+        <dt><span data-translate="ecommerceApp.direccion.ubigeo">Ubigeo</span></dt>
+        <dd>
+            <a ui-sref="ubigeo-detail({id:vm.direccion.ubigeo.id})">{{vm.direccion.ubigeo.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="direccion-detail.edit({id:vm.direccion.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

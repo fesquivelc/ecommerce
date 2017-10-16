@@ -1,0 +1,161 @@
+entity Cargo{
+	nombre String required,
+    descripcion String,
+}
+
+enum EstadoPedido{
+GENERADO,
+ACEPTADO,
+ENVIADO,
+RECIBIDO
+}
+
+enum ClienteEstado{
+ACTIVO,
+INACTIVO,
+DEUDOR
+}
+
+entity Area{
+	codigo String,
+    nombre String required,
+    
+}
+
+entity Marca{
+	nombre String required,
+}
+entity Cliente{
+	ruc String required,
+    razonSocial String required,
+    estado ClienteEstado required
+}
+
+entity Ubigeo{
+	codigo String required,
+    departamento String required,
+    provincia String required,
+    distrito String required
+}
+
+entity Categoria{
+	nombre String required,
+    descripcion String
+}
+
+entity Personal{
+	paterno String required,
+    materno String,
+    nombres String required,
+    numeroDocumento String,
+    email String,
+    
+}
+
+entity UnidadMedida{
+	nombre String required,
+    codigo String required,
+}
+
+entity Equivalencia{
+	valor BigDecimal required
+}
+
+entity Producto{
+	codigoBarras String,
+ 	imagen ImageBlob,
+    nombre String required,
+    precioBase BigDecimal required,
+    
+}
+
+entity FlujoPedido{
+	activo Boolean required,
+}
+
+entity Direccion{
+	direccion String,
+    numero String,
+    telefono String,
+    celular String,
+}
+
+entity Almacen{
+	codigo String required,
+    nombre String required,
+}
+
+entity Inventario{
+	stock Integer required
+}
+
+enum FormaPago{
+CONTADO,
+CUOTAS
+}
+
+enum TipoComprobante{
+FACTURA,
+BOLETA
+}
+
+enum CuotaEstado{
+PAGADA,
+ESPERA,
+DEUDA
+}
+
+entity Pedido{
+	fecha ZonedDateTime required,
+    estado EstadoPedido required,
+    montoVenta BigDecimal required,
+    formaPago FormaPago required,
+}
+
+entity Cuota{
+fechaVencimiento LocalDate required,
+fechaComunicado LocalDate required,
+monto BigDecimal required,
+estado CuotaEstado required,
+}
+
+entity Comprobante{
+	numero String required,
+    tipoComprobante TipoComprobante
+}
+
+entity DetallePedido{
+	cantidad BigDecimal required,
+    precioUnitario BigDecimal required
+}
+
+
+
+relationship ManyToOne{
+	Direccion{cliente} to Cliente,
+    Direccion{ubigeo} to Ubigeo,
+    Personal{area} to Area,
+    Personal{cargo} to Cargo,
+    Inventario{almacen} to Almacen,
+    Inventario{producto} to Producto,
+    Producto{unidadMedida} to UnidadMedida,
+    Producto{categoria} to Categoria,
+    Producto{marca} to Marca,
+    Almacen{responsable} to Personal,
+    Equivalencia{desde} to UnidadMedida,
+    Equivalencia{hasta} to UnidadMedida,
+    FlujoPedido{cargo} to Cargo,
+    FlujoPedido{anterior} to FlujoPedido,
+    Pedido{cliente} to Cliente,
+    Pedido{vendedor} to Personal,
+    DetallePedido{unidadMedida} to UnidadMedida,
+    DetallePedido{producto} to Producto,
+    Comprobante{pedido} to Pedido,
+    Cuota{pedido} to Pedido
+}
+
+// Set pagination options
+paginate Pedido,Comprobante,Producto,Personal with pagination
+
+// Set service options to all except few
+service all with serviceImpl

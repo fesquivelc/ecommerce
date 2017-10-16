@@ -1,0 +1,94 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCuotaLabel" data-translate="ecommerceApp.cuota.home.createOrEditLabel">Create or edit a Cuota</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.cuota.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.cuota.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ecommerceApp.cuota.fechaVencimiento" for="field_fechaVencimiento">Fecha Vencimiento</label>
+                <div class="input-group">
+                    <input id="field_fechaVencimiento" type="text" class="form-control" name="fechaVencimiento" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cuota.fechaVencimiento" is-open="vm.datePickerOpenStatus.fechaVencimiento"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fechaVencimiento')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.fechaVencimiento.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fechaVencimiento.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ecommerceApp.cuota.fechaComunicado" for="field_fechaComunicado">Fecha Comunicado</label>
+                <div class="input-group">
+                    <input id="field_fechaComunicado" type="text" class="form-control" name="fechaComunicado" uib-datepicker-popup="{{dateformat}}" ng-model="vm.cuota.fechaComunicado" is-open="vm.datePickerOpenStatus.fechaComunicado"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fechaComunicado')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.fechaComunicado.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fechaComunicado.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ecommerceApp.cuota.monto" for="field_monto">Monto</label>
+            <input type="number" class="form-control" name="monto" id="field_monto"
+                    ng-model="vm.cuota.monto"
+                    required/>
+            <div ng-show="editForm.monto.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.monto.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.monto.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ecommerceApp.cuota.estado" for="field_estado">Estado</label>
+            <select class="form-control" name="estado" ng-model="vm.cuota.estado" id="field_estado" required>
+                <option value="PAGADA" data-translate="ecommerceApp.CuotaEstado.PAGADA">PAGADA</option>
+                <option value="ESPERA" data-translate="ecommerceApp.CuotaEstado.ESPERA">ESPERA</option>
+                <option value="DEUDA" data-translate="ecommerceApp.CuotaEstado.DEUDA">DEUDA</option>
+            </select>
+            <div ng-show="editForm.estado.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.estado.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="ecommerceApp.cuota.pedido" for="field_pedido">Pedido</label>
+            <select class="form-control" id="field_pedido" name="pedido" ng-model="vm.cuota.pedido" ng-options="pedido as pedido.id for pedido in vm.pedidos track by pedido.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

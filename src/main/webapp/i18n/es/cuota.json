@@ -1,0 +1,25 @@
+{
+    "ecommerceApp": {
+        "cuota" : {
+            "home": {
+                "title": "Cuotas",
+                "createLabel": "Crear nuevo Cuota",
+                "createOrEditLabel": "Crear o editar Cuota"
+            },
+            "created": "Un nuevo Cuota ha sido creado con el identificador {{ param }}",
+            "updated": "Un Cuota ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Cuota ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Cuota {{ id }}?"
+            },
+            "detail": {
+                "title": "Cuota"
+            },
+            "fechaVencimiento": "Fecha Vencimiento",
+            "fechaComunicado": "Fecha Comunicado",
+            "monto": "Monto",
+            "estado": "Estado",
+            "pedido": "Pedido"
+        }
+    }
+}

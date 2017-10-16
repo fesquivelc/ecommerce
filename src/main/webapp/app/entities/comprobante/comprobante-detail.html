@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="ecommerceApp.comprobante.detail.title">Comprobante</span> {{vm.comprobante.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ecommerceApp.comprobante.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.comprobante.numero}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.comprobante.tipoComprobante">Tipo Comprobante</span></dt>
+        <dd>
+            <span data-translate="{{'ecommerceApp.TipoComprobante.' + vm.comprobante.tipoComprobante}}">{{vm.comprobante.tipoComprobante}}</span>
+        </dd>
+        <dt><span data-translate="ecommerceApp.comprobante.pedido">Pedido</span></dt>
+        <dd>
+            <a ui-sref="pedido-detail({id:vm.comprobante.pedido.id})">{{vm.comprobante.pedido.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="comprobante-detail.edit({id:vm.comprobante.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
