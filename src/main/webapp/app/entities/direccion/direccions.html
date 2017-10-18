@@ -1,12 +1,12 @@
 <div>
-    <h2 data-translate="ecommerceApp.direccion.home.title">Direccions</h2>
+    <h2>Direcciones</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="direccion.new" >
+                <button class="btn btn-primary" ui-sref="direccion.new">
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="ecommerceApp.direccion.home.createLabel">
+                    <span data-translate="ecommerceApp.direccion.home.createLabel">
                         Create new Direccion
                     </span>
                 </button>
@@ -17,53 +17,55 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="ecommerceApp.direccion.direccion">Direccion</span></th>
-                    <th><span data-translate="ecommerceApp.direccion.numero">Numero</span></th>
-                    <th><span data-translate="ecommerceApp.direccion.telefono">Telefono</span></th>
-                    <th><span data-translate="ecommerceApp.direccion.celular">Celular</span></th>
-                    <th><span data-translate="ecommerceApp.direccion.cliente">Cliente</span></th>
-                    <th><span data-translate="ecommerceApp.direccion.ubigeo">Ubigeo</span></th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th><span data-translate="global.field.id">ID</span></th>
+                <th><span data-translate="ecommerceApp.direccion.cliente">Cliente</span></th>
+                <th><span data-translate="ecommerceApp.direccion.direccion">Direccion</span></th>
+                <th><span data-translate="ecommerceApp.direccion.numero">Numero</span></th>
+                <th><span data-translate="ecommerceApp.direccion.ubigeo">Ubigeo</span></th>
+                <th><span data-translate="ecommerceApp.direccion.telefono">Telefono</span></th>
+                <th><span data-translate="ecommerceApp.direccion.celular">Celular</span></th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="direccion in vm.direccions track by direccion.id">
-                    <td><a ui-sref="direccion-detail({id:direccion.id})">{{direccion.id}}</a></td>
-                    <td>{{direccion.direccion}}</td>
-                    <td>{{direccion.numero}}</td>
-                    <td>{{direccion.telefono}}</td>
-                    <td>{{direccion.celular}}</td>
-                    <td>
-                        <a ui-sref="cliente-detail({id:direccion.cliente.id})">{{direccion.cliente.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="ubigeo-detail({id:direccion.ubigeo.id})">{{direccion.ubigeo.id}}</a>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="direccion-detail({id:direccion.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="direccion.edit({id:direccion.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="direccion.delete({id:direccion.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+            <tr ng-repeat="direccion in vm.direccions track by direccion.id">
+                <td><a ui-sref="direccion-detail({id:direccion.id})">{{direccion.id}}</a></td>
+                <td>
+                    <a ui-sref="cliente-detail({id:direccion.cliente.id})">{{direccion.cliente.razonSocial}}</a>
+                </td>
+                <td>{{direccion.direccion}}</td>
+                <td>{{direccion.numero}}</td>
+                <td>
+                    <a ui-sref="ubigeo-detail({id:direccion.ubigeo.id})">{{direccion.ubigeo.distrito}}</a>
+                </td>
+                <td>{{direccion.telefono}}</td>
+                <td>{{direccion.celular}}</td>
+
+
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                ui-sref="direccion-detail({id:direccion.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="direccion.edit({id:direccion.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="direccion.delete({id:direccion.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

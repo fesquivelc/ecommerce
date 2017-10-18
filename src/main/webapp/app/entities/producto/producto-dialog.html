@@ -78,13 +78,13 @@
         </div>
         <div class="form-group">
             <label data-translate="ecommerceApp.producto.categoria" for="field_categoria">Categoria</label>
-            <select class="form-control" id="field_categoria" name="categoria" ng-model="vm.producto.categoria" ng-options="categoria as categoria.id for categoria in vm.categorias track by categoria.id">
+            <select class="form-control" id="field_categoria" name="categoria" ng-model="vm.producto.categoria" ng-options="categoria as categoria.nombre for categoria in vm.categorias track by categoria.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label data-translate="ecommerceApp.producto.marca" for="field_marca">Marca</label>
-            <select class="form-control" id="field_marca" name="marca" ng-model="vm.producto.marca" ng-options="marca as marca.id for marca in vm.marcas track by marca.id">
+            <select class="form-control" id="field_marca" name="marca" ng-model="vm.producto.marca" ng-options="marca as marca.nombre for marca in vm.marcas track by marca.id">
                 <option value=""></option>
             </select>
         </div>

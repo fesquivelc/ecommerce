@@ -21,6 +21,16 @@
                         controller: 'VentasController',
                         controllerAs: 'vm'
                     }
+                },
+                resolve: {
+
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('pedido');
+                        $translatePartialLoader.addPart('estadoPedido');
+                        $translatePartialLoader.addPart('formaPago');
+                        $translatePartialLoader.addPart('global');
+                        return $translate.refresh();
+                    }]
                 }
             })
             .state('ventas-new', {

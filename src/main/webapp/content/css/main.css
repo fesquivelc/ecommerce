@@ -108,7 +108,7 @@ Main page styles
     display: inline-block;
     width: 347px;
     border-radius: 25px;
-    background: url("../images/vina_vieja_logo.jpg") no-repeat center top;
+    background: url("/content/images/vina_vieja_logo.jpg") no-repeat center top;
     background-size: contain;
 }
 
@@ -121,7 +121,7 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
     .hipster {
-        background: url("../images/hipster2x.png") no-repeat center top;
+        background: url("/content/images/vina_vieja_logo.jpg") no-repeat center top;
         background-size: contain;
     }
 }
@@ -356,7 +356,8 @@ ui bootstrap tweaks
     color: #fafafa;
 }
 
-
+/*
 .well{
     background-color: rgb(204,177,179);
 }
+*/

@@ -4,9 +4,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="almacen.new">
+                <button class="btn btn-primary" ui-sref="ventas-new">
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span >
+                    <span>
                         Generar nuevo pedido
                     </span>
                 </button>
@@ -17,41 +17,41 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr>
-                    <th><span>Fecha</span></th>
-                    <th><span>RUC</span></th>
-                    <th><span>Razón social</span></th>
-                    <th><span>Monto</span></th>
-                    <th><span>Estado</span></th>
-                    <th><span>Vendedor</span></th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th><span>Fecha</span></th>
+                <th><span>RUC</span></th>
+                <th><span>Razón social</span></th>
+                <th><span>Monto</span></th>
+                <th><span>Estado</span></th>
+                <th><span>Vendedor</span></th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="venta in ventaList track by venta.id">
-                    <td>{{venta.fecha | date: 'dd/MM/yyyy'}}</td>
-                    <td>{{ venta.ciente.ruc }}</td>
-                    <td>{{venta.cliente.razonSocial}}</td>
-                    <td>{{venta.montoVenta}}</td>
-                    <td>{{ venta.estado }}</td>
-                    <td>{{venta.vendedor.nombres + ' ' + venta.vendedor.apellidos}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit" ui-sref="almacen-detail({id:almacen.id})" class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit" ui-sref="almacen.edit({id:almacen.id})" class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit" ui-sref="almacen.delete({id:almacen.id})" class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+            <tr ng-repeat="venta in ventaList track by venta.id">
+                <td>{{venta.fecha | date: 'dd/MM/yyyy'}}</td>
+                <td>{{ venta.ciente.ruc }}</td>
+                <td>{{venta.cliente.razonSocial}}</td>
+                <td>{{venta.montoVenta}}</td>
+                <td>{{ venta.estado }}</td>
+                <td>{{venta.vendedor.nombres + ' ' + venta.vendedor.apellidos}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit" ui-sref="pedido-detail({id:venta.id})" class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                        </button>
+                        <button type="submit" ui-sref="pedido.edit({id:venta.id})" class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit" ui-sref="pedido.delete({id:venta.id})" class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

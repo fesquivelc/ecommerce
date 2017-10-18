@@ -8,6 +8,7 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import com.doraliz.ecommerce.domain.enumeration.EstadoPedido;
@@ -31,12 +32,12 @@ public class Pedido implements Serializable {
 
     @NotNull
     @Column(name = "fecha", nullable = false)
-    private ZonedDateTime fecha;
+    private ZonedDateTime fecha = ZonedDateTime.now();
 
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "estado", nullable = false)
-    private EstadoPedido estado;
+    private EstadoPedido estado = EstadoPedido.GENERADO;
 
     @NotNull
     @Column(name = "monto_venta", precision=10, scale=2, nullable = false)
@@ -45,13 +46,24 @@ public class Pedido implements Serializable {
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "forma_pago", nullable = false)
-    private FormaPago formaPago;
+    private FormaPago formaPago =  FormaPago.CONTADO;
 
     @ManyToOne
     private Cliente cliente;
 
     @ManyToOne
     private Personal vendedor;
+
+//    @OneToMany(mappedBy = "pedido", orphanRemoval = true, cascade = CascadeType.ALL)
+//    private List<DetallePedido> detallePedidoList;
+//
+//    public List<DetallePedido> getDetallePedidoList() {
+//        return detallePedidoList;
+//    }
+//
+//    public void setDetallePedidoList(List<DetallePedido> detallePedidoList) {
+//        this.detallePedidoList = detallePedidoList;
+//    }
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {

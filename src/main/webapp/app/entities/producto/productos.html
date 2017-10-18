@@ -42,13 +42,13 @@
                     <td>{{producto.nombre}}</td>
                     <td>{{producto.precioBase}}</td>
                     <td>
-                        <a ui-sref="unidad-medida-detail({id:producto.unidadMedida.id})">{{producto.unidadMedida.id}}</a>
+                        <a ui-sref="unidad-medida-detail({id:producto.unidadMedida.id})">{{producto.unidadMedida.codigo}}</a>
                     </td>
                     <td>
-                        <a ui-sref="categoria-detail({id:producto.categoria.id})">{{producto.categoria.id}}</a>
+                        <a ui-sref="categoria-detail({id:producto.categoria.id})">{{producto.categoria.nombre}}</a>
                     </td>
                     <td>
-                        <a ui-sref="marca-detail({id:producto.marca.id})">{{producto.marca.id}}</a>
+                        <a ui-sref="marca-detail({id:producto.marca.id})">{{producto.marca.nombre}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity FlujoPedido.
+    -->
+    <changeSet id="20171015141618-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="cargo_id"
+                                 baseTableName="flujo_pedido"
+                                 constraintName="fk_flujo_pedido_cargo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cargo"/>
+
+        <addForeignKeyConstraint baseColumnNames="anterior_id"
+                                 baseTableName="flujo_pedido"
+                                 constraintName="fk_flujo_pedido_anterior_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="flujo_pedido"/>
+
+    </changeSet>
+</databaseChangeLog>
